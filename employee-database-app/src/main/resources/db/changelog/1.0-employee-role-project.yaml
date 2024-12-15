@@ -1,0 +1,123 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: vashisth.soni
+      changes:
+        - createTable:
+            tableName: Role
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+  - changeSet:
+      id: 2
+      author: vashisth.soni
+      changes:
+        - createTable:
+            tableName: Employee
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: Employee
+            baseColumnNames: role_id
+            constraintName: fk_employee_role
+            referencedTableName: Role
+            referencedColumnNames: id
+            onDelete: CASCADE
+
+  - changeSet:
+      id: 3
+      author: vashisth.soni
+      changes:
+        - createTable:
+            tableName: Project
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: employee_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: Project
+            baseColumnNames: employee_id
+            constraintName: fk_project_employee
+            referencedTableName: Employee
+            referencedColumnNames: id
+            onDelete: CASCADE
+
+  - changeSet:
+      id: 4
+      author: vashisth.soni
+      changes:
+        - createIndex:
+            indexName: idx_employee_roleid
+            tableName: Employee
+            columns:
+              - column:
+                  name: role_id
+        - createIndex:
+            indexName: idx_project_employee_id
+            tableName: Project
+            columns:
+              - column:
+                  name: employee_id
+        - createIndex:
+            indexName: idx_project_name
+            tableName: Project
+            columns:
+              - column:
+                  name: name
+
+  - changeSet:
+      id: 1.0-add-procedure-role-project
+      author: vashisth.soni
+      changes:
+        - sql:
+            dbms: h2
+            splitStatements: false
+            sql: |
+              CREATE ALIAS DELETE_ROLE_AND_REASSIGN_PROJECTS FOR "com.employee.database.service.app.handler.RoleAndProjectHandler.deleteRoleAndReassignProjects";
+

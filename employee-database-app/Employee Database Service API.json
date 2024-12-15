@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "c10af840-6106-4a3a-a47b-0dd3b8cfb3ea",
+		"name": "Employee Database Service API",
+		"description": "API collection for managing employees, roles, and projects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Get All Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/employees",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/employees/1",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Jane USER\",\n  \"role_id\": 4\n}"
+						},
+						"url": {
+							"raw": "{{employee-database-service}}/api/employees",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"role_id\": 3\n}"
+						},
+						"url": {
+							"raw": "{{employee-database-service}}/api/employees/3",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/employees/1",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Get All Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/roles",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Role By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/roles/1",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"USER\"\n}"
+						},
+						"url": {
+							"raw": "{{employee-database-service}}/api/roles",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"MANAGER\"\n}"
+						},
+						"url": {
+							"raw": "{{employee-database-service}}/api/roles/3",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/roles/4?defaultEmployeeId=6",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"4"
+							],
+							"query": [
+								{
+									"key": "defaultEmployeeId",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Get All Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/projects",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/projects/2",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Project F\",\n  \"employee_id\" : 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{employee-database-service}}/api/projects",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Project D\",\n  \"employee_id\" : 3\n}"
+						},
+						"url": {
+							"raw": "{{employee-database-service}}/api/projects/2",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{employee-database-service}}/api/projects/5",
+							"host": [
+								"{{employee-database-service}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
