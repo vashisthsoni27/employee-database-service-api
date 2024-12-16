@@ -13,8 +13,8 @@ This project provides a RESTful API for managing employee data, roles, and proje
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/employee-management-service.git
-    cd employee-management-service
+    git clone https://github.com/vashisthsoni27/employee-database-service-api.git
+    cd employee-database-app
     ```
 
 2. **Build the project**:
@@ -45,7 +45,6 @@ This provides a detailed structure of all available API endpoints.
 ### 2. Swagger UI (Interactive API Documentation)
 - You can view and interact with the API using Swagger UI at: http://localhost:8082/swagger-ui.html
 
-
 This page provides a user-friendly interface where you can:
 - Explore the available endpoints.
 - View request/response formats.
@@ -64,7 +63,7 @@ This page provides a user-friendly interface where you can:
 You can use Postman to interact with the API endpoints directly. Here are the steps to import the Postman collection:
 
 ### 1. Download Postman Collection
-- Download the Postman collection file (JSON format) from the project repository or [this link](#).
+- Download the Postman collection file (JSON format) from the project repository or https://github.com/vashisthsoni27/employee-database-service-api/blob/main/employee-database-app/Employee%20Database%20Service%20API.json.
 
 ### 2. Import the Collection into Postman
 - Open Postman and click on the **Import** button in the top left corner.
@@ -120,7 +119,9 @@ Here is a brief list of API endpoints available:
 
 ## Code Coverage Report
 
-The code coverage report can be found [here](target/jacoco-report/index.html).
+The code coverage report can be found here (target/site/index.html).
+
+Current code coverage report is here: https://github.com/vashisthsoni27/employee-database-service-api/blob/main/employee-database-app/Code_Coverage.png
 
 To generate the report yourself, run:
 
